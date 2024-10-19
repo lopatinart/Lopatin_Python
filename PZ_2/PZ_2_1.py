@@ -4,12 +4,13 @@
 num = input('Введите трехзначное число>> ')
 
 while type(num) != int:  # обработка исключений
-  if len(num) == 3:   # обработка не трехзначных чисел
-    try:
-        num = int(num)
-    except ValueError:
-        print("Вы неправильно ввели число!")
-        num = input("Введите новое число>> ")
+  try:
+    num = int(num)
+    if 99 < num < 1000:  # обработка не трехзначных чисел
+      break
+  except ValueError:
+    print("Вы неправильно ввели число!")
+    num = input("Введите новое число>> ")
   else:
     print("Вы неправильно ввели число!")
     num = input("Введите новое число>> ")
