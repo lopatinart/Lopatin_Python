@@ -14,6 +14,6 @@ while type(num) != int:  # обработка исключений
     print("Вы неправильно ввели число!")
     num = input("Введите новое число>> ")
 
-num = str(num)
+num = str(num)  # обработка числа
 num = (num[::-1])
 print(int(num))
