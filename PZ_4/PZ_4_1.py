@@ -18,12 +18,12 @@ while type(n) != int:
         print("Неправильно ввели!")
         n = input("Введите число больше нуля>> ")
 
-factorial = 1
-num = n
+sum_series = 1.0
+factorial = 1.0
 
-# Вычисляем факториал, пока n не станет равным 0
-while n:
-    factorial *= n
-    n -= 1
+# Производим вычисления
+for i in range(1, n + 1):
+        factorial *= i
+        sum_series += 1 / factorial
 
-print(f'Факториал числа {num} - {factorial}')  # Вывод результата
+print(f"Приближенное значение константы e: {sum_series}")  # Вывод результата
