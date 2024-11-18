@@ -16,7 +16,7 @@ while type(count) != int:
 
 
 def stars(m):
-    for i in range(m + 1):
+    for i in range(1, m + 1):
         print(i * '*')
 
 stars(count)
