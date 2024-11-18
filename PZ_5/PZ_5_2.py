@@ -4,22 +4,19 @@
 # степени пяти данных чисел
 
 
-def  PowerA3(A):
+def PowerA3(A):
     B = A**3
     return B
 
 for i in range(5):
-    num = input('Введите целое число>> ')
+    num = input('Введите число>> ')
 
+    # Обработка исключений
     while type(num) != float:
         try:
             num = float(num)
-            # Проверка на положительность num
-            if num < 0:
-                print("Неправильно ввели!")
-                num = input('Введите целое число>> ')
         except ValueError:
             print("Неправильно ввели!")
-            num = input('Введите целое число>> ')
+            num = input('Введите число>> ')
 
     print('Третья степень числа>>', PowerA3(num))
