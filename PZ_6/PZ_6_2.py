@@ -41,4 +41,4 @@ for i in range(len(nums)):
             min_diff = diff
             closest_items = (i, a)
 
-print(f'Индексы элементов с минимальным модулем разности>> {closest_items}')
+print(f'Индексы элементов с минимальным модулем разности>> {sorted(closest_items)}')
