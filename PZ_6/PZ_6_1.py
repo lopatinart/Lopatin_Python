@@ -6,12 +6,15 @@
 import random
 
 A = []
+counter = 0
 
 # Цикл генирирующий список из 10 случайных ненулевых чисел
-for i in range(10):
+while counter != 10:
     num = random.randint(-100,100)
     if num != 0:
         A.append(num)
+        counter += 1
+
 
 print(A)
 
