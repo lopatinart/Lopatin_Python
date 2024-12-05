@@ -2,15 +2,16 @@
 # разделенных пробелами (одним или несколькими). Вывести строку, содержащую
 # эти же слова, разделенные одним пробелом и расположенные в алфавитном порядке.
 
-text = input('Введите начальную строку>> ')
+# example = 'ЯБЛОКО  ОГУРЕЦ БАНАН     ОБЛАКО'
+text = input('Введите начальную строку>> ')  # Вводим строку
 
+# Разделяем строку по пробелам
+list_text = text.split()
 
+# Сортируем по алфавиту
+sorted_list_text = list_text.sort()
 
-list_text = text.split(' ')
-for char in list_text:
-    if len(char) == 0:
-        list_text.remove(char)
-    list_text = sorted(list_text)
-text = ' '.join(list_text)
+# Воссоединяем строку обратно
+final_text = ' '.join(list_text)
 
-print(f'Конечная строка>> {text}')
+print(f'Конечная строка>> {final_text}')  # Выводим финальную строку
