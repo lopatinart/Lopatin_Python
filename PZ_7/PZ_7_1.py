@@ -3,5 +3,6 @@
 
 text = input('Введите строку>> ')
 
+upper_text = text.upper()
 
-print(text.upper())
+print(upper_text)
