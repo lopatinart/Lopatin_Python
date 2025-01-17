@@ -11,6 +11,8 @@ list_of_Person = {
     "Владимир": 41
 }
 
+print(f'Список людей>> {list_of_Person}\n')
+
 srznach = 0
 
 for name in list_of_Person:
