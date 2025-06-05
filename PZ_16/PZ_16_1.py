@@ -1,6 +1,8 @@
 # Создайте класс «Матрица», который имеет атрибуты количества строк и столбцов.
 # Добавьте методы для сложения, вычитания и умножения матриц.
 
+import pickle
+
 class Matrix:
     def __init__(self, data):
         self.data = data
@@ -46,6 +48,24 @@ class Matrix:
             print(row)
 
 
+def save_def(matrices, filename):
+    """
+    Сохраняет список матриц в бинарный файл.
+    """
+    with open(filename, 'wb') as file:
+        pickle.dump(matrices, file)
+    print(f"Матрицы успешно сохранены в файл '{filename}'.")
+
+def load_def(filename):
+    """
+    Загружает список матриц из бинарного файла.
+    """
+    with open(filename, 'rb') as file:
+        matrices = pickle.load(file)
+    print(f"Матрицы успешно загружены из файла '{filename}'.")
+    return matrices
+
+
 # Создание мамтриц
 m1_rows = int(input("Введите количество строк в первой матрице>> "))
 m1_cols = int(input("Введите количество столбцов в первой матрице>> "))
@@ -73,7 +93,10 @@ for i in range(m2_rows):
 
 M1 = Matrix(m1)
 M2 = Matrix(m2)
+m3 = Matrix([[9, 10], [11, 12]])
 
+save_def([M1, M2, m3], 'matrices.pkl')
+loaded_matrices = load_def('matrices.pkl')
 
 print("\nСложение:")
 M1.add(M2).print()
@@ -83,3 +106,8 @@ M1.subtract(M2).print()
 
 print("\nУмножение:")
 M1.multiply(M2).print()
+
+print("\nЗагруженные матрицы:")
+for matrix in loaded_matrices:
+    matrix.print()
+    print()
